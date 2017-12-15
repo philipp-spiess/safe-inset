@@ -1,0 +1,13 @@
+{
+  "name": "safe-inset",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Philipp Spiess",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve ./"
+  },
+  "devDependencies": {
+    "serve": "^6.4.1"
+  }
+}

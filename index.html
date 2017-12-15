@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      h1 {
+        color: white;
+        font-weight: 100;
+        font-size: 2em;
+        margin: 0.5em 0;
+      }
+      p {
+        color: white;
+        font-weight: 100;
+        margin-left: 1.5em;
+        font-size: 1.2em;
+        font-family: monospace;
+      }
+    </style>
+    <meta name="viewport" content="initial-scale=1, viewport-fit=cover">
+    <script src="src/index.js"></script>
+  </head>
+  <body>
+    <section>
+      <h1>SafeInset = {</h1>
+      <p class="safe-area inset-top">inset-top: <code></code>;</p>
+      <p class="safe-area inset-right">inset-right: <code></code>;</p>
+      <p class="safe-area inset-bottom">inset-bottom: <code></code>;</p>
+      <p class="safe-area inset-left">inset-left: <code></code>;</p>
+      <h1 role="presentation">}</h1>
+    </section>
+
+    <script>
+      function applyInsetToHtml(insets) {
+        document.querySelector('.inset-top > code').innerHTML = `${insets.top}px`;
+        document.querySelector('.inset-right > code').innerHTML = `${insets.right}px`;
+        document.querySelector('.inset-bottom > code').innerHTML = `${insets.bottom}px`;
+        document.querySelector('.inset-left > code').innerHTML = `${insets.left}px`;
+      }
+
+      applyInsetToHtml(SafeInset);
+      SafeInset.onChange((inset) => applyInsetToHtml(inset));
+    </script>
+  </body>
+</html>
